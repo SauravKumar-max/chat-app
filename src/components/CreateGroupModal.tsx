@@ -124,7 +124,7 @@ export function CreateGroupModal({
               </Box>
             )}
           </Box>
-          <Grid container sx={{ mt: 1 }}>
+          {/* <Grid container sx={{ mt: 1 }}>
             {selectedUsers.map((id) => (
               <Grid
                 item
@@ -142,7 +142,7 @@ export function CreateGroupModal({
                 Saurav Kumar
               </Grid>
             ))}
-          </Grid>
+          </Grid> */}
           <Button
             disabled={groupName && selectedUsers.length > 0 ? false : true}
             variant="contained"
