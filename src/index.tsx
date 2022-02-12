@@ -4,11 +4,20 @@ import "./index.css";
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 import { BrowserRouter as Router } from "react-router-dom";
+import { ThemeProvider } from "@mui/material/styles";
+import { theme } from "./utils";
+import { AuthProvider, ChatProvider } from "./context";
 
 ReactDOM.render(
   <React.StrictMode>
     <Router>
-      <App />
+      <ThemeProvider theme={theme}>
+        <AuthProvider>
+          <ChatProvider>
+            <App />
+          </ChatProvider>
+        </AuthProvider>
+      </ThemeProvider>
     </Router>
   </React.StrictMode>,
   document.getElementById("root")
