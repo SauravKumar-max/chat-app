@@ -16,7 +16,7 @@ export const disabledButtonStyle = {
 }
 
 export const authContainer = {
-    margin: "10rem auto 2rem auto",
+    margin: "4rem auto 2rem auto",
     width: "90%",
     maxWidth: "28rem",
     border: "solid 1px #adadad",
