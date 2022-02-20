@@ -21,17 +21,13 @@ export function GroupChatAdminDrawer({
   setOpenGroupChatInfo,
 }: GroupChatInfoProps) {
   const { chatState } = useChat();
-  const { _id: groupId } = chatState.activeChat || {};
-  const currentActiveChat = chatState.chats?.find(
-    (chat) => chat._id === groupId
-  );
-  const { groupName, groupPic, users, admin } = currentActiveChat || {};
+  const { _id, groupName, groupPic, users, admin } = chatState.activeChat || {};
   const [editGroupName, setEditGroupName] = useState(false);
   const [updateGroupName, setUpdateGroupName] = useState(groupName);
   const { changeGroupName } = useChatCalls();
 
   function updateGroupHandler() {
-    changeGroupName(groupId!, updateGroupName!);
+    changeGroupName(_id!, updateGroupName!);
     setEditGroupName(false);
   }
 
