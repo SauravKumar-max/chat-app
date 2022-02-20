@@ -20,6 +20,7 @@ import {
   authError,
 } from "../muistyles";
 import { Visibility, VisibilityOff } from "@mui/icons-material";
+import ForumIcon from "@mui/icons-material/Forum";
 import { useNavigate } from "react-router-dom";
 import { useAuth } from "../context";
 
@@ -55,6 +56,23 @@ export function Login() {
 
   return (
     <div>
+      <Stack
+        direction={"row"}
+        alignItems={"center"}
+        sx={{ margin: "1rem 2rem" }}
+      >
+        <IconButton size="large" edge="start" color="primary" aria-label="menu">
+          <ForumIcon />
+        </IconButton>
+        <Typography
+          variant="h6"
+          component="div"
+          sx={{ flexGrow: 1, fontWeight: "bold", color: "#3d41d7" }}
+        >
+          BlendChat
+        </Typography>
+      </Stack>
+
       <Stack direction={"column"} alignItems={"center"} sx={authContainer}>
         <Typography variant="h2" sx={authHeader}>
           LogIn
