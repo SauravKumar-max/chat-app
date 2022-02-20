@@ -44,6 +44,7 @@ export type CHAT_ACTIONTYPE =
     | { type: "CHANGE_GROUPNAME", payload: UpdateGroupName }
     | { type: "CHANGE_GROUPPIC", payload: UpdateGroupPic }
     | { type: "UPDATE_LATEST_MESSAGE", payload: UpdateLatestMessage }
+    | { type: "UPDATE_ACTIVECHAT", payload: { groupName: string } | { groupPic: string } }
 
 export type AUTH_ACTIONTYPE = 
     | { type: "SET_TOKEN", payload: string | null }

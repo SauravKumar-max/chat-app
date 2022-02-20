@@ -55,7 +55,8 @@ export function useChatCalls(){
     }
 
     async function changeGroupName( groupId: string, updateGroupName: string){
-        dispatchChat({type: "CHANGE_GROUPNAME", payload: { groupId, updateGroupName}})
+        dispatchChat({type: "CHANGE_GROUPNAME", payload: { groupId, updateGroupName}});
+        dispatchChat({ type:"UPDATE_ACTIVECHAT", payload: { groupName: updateGroupName }})
         try{
             await axios.post(api + "/chat/changeGroupName", { groupId, updateGroupName });
         }catch(error){
@@ -65,6 +66,7 @@ export function useChatCalls(){
 
     async function updateGroupPic( groupId: string, updateGroupPic: string){
         dispatchChat({type: "CHANGE_GROUPPIC", payload: { groupId, updateGroupPic }});
+        dispatchChat({ type:"UPDATE_ACTIVECHAT", payload: { groupPic: updateGroupPic }})
         try{
             await axios.post(api + "/chat/changeGroupPic", { groupId, updateGroupPic });
         }catch(error){

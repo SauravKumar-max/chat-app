@@ -23,6 +23,10 @@ export const chatReducer = (state: typeof chatInitialState, action: CHAT_ACTIONT
 
         case "UPDATE_LATEST_MESSAGE":
             return { ...state, chats: state.chats?.map(chat => chat._id === action.payload.chatId ? { ...chat, latestMessage: action.payload.message } : chat)}
+        
+        case "UPDATE_ACTIVECHAT": 
+            return { ...state, activeChat:  { ...state.activeChat!, ...action.payload }}
+
         default:
             return state;
     }
