@@ -6,9 +6,11 @@ import {
   Button,
   Backdrop,
   CircularProgress,
+  IconButton,
 } from "@mui/material";
 import { useNavigate } from "react-router-dom";
 import { useAuth } from "../context/AuthProvider";
+import ForumIcon from "@mui/icons-material/Forum";
 import { InputVlaueType } from "./pages.types";
 import {
   buttonStyle,
@@ -77,6 +79,22 @@ export function Signup() {
 
   return (
     <div>
+      <Stack
+        direction={"row"}
+        alignItems={"center"}
+        sx={{ margin: "1rem 2rem" }}
+      >
+        <IconButton size="large" edge="start" color="primary" aria-label="menu">
+          <ForumIcon />
+        </IconButton>
+        <Typography
+          variant="h6"
+          component="div"
+          sx={{ flexGrow: 1, fontWeight: "bold", color: "#3d41d7" }}
+        >
+          BlendChat
+        </Typography>
+      </Stack>
       <Stack direction={"column"} alignItems={"center"} sx={authContainer}>
         <Typography variant="h2" sx={authHeader}>
           SignUp
