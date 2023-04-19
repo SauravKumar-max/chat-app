@@ -22,7 +22,8 @@ export function Messages() {
   const [isTyping, setIsTyping] = useState(false);
 
   useEffect(() => {
-    socket = io("https://chatapp-backend.sauravkumar007.repl.co");
+    const uri = process.env.RREACT_APP_API_URL!;
+    socket = io(uri);
     socket.emit("setup", userId);
     socket.on("connected", () => setSocketConnected(true));
     socket.on("typing", () => setIsTyping(true));
