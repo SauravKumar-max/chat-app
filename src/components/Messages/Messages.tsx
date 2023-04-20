@@ -22,7 +22,7 @@ export function Messages() {
   const [isTyping, setIsTyping] = useState(false);
 
   useEffect(() => {
-    const uri = process.env.RREACT_APP_API_URL!;
+    const uri = process.env.REACT_APP_API_URL!;
     socket = io(uri);
     socket.emit("setup", userId);
     socket.on("connected", () => setSocketConnected(true));
